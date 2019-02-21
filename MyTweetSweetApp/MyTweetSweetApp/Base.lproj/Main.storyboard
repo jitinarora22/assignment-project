@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nqv-Nt-Ozg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Twitter Trendz-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyTweetSweetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qAi-cP-3sM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1fc-4n-rqc"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J8N-gk-nso">
+                                <rect key="frame" x="0.0" y="152" width="375" height="515"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" rowHeight="155" id="hcb-iP-Ngv">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="155"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hcb-iP-Ngv" id="6os-Kw-D7j">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="chK-af-drD"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OVN-Fc-Unm"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UV-d0-dci">
+                                <rect key="frame" x="280" y="120" width="95" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="d4h-uO-c4R"/>
+                                    <constraint firstAttribute="width" constant="95" id="y1E-jD-43c"/>
+                                </constraints>
+                                <state key="normal" title="Popularity"/>
+                                <connections>
+                                    <action selector="popularityAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t6r-fk-bQ5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-Mp-SHC">
+                                <rect key="frame" x="196" y="125" width="84" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="GTw-ZU-CsO"/>
+                                    <constraint firstAttribute="width" constant="84" id="sTZ-fN-PUp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2UV-d0-dci" firstAttribute="top" secondItem="qAi-cP-3sM" secondAttribute="bottom" id="Egb-uP-GWa"/>
+                            <constraint firstItem="qAi-cP-3sM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IRb-Gf-dG2"/>
+                            <constraint firstItem="2UV-d0-dci" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NSD-Z1-yfm"/>
+                            <constraint firstItem="ePY-Mp-SHC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="196" id="Nph-LI-Dyz"/>
+                            <constraint firstItem="J8N-gk-nso" firstAttribute="top" secondItem="ePY-Mp-SHC" secondAttribute="bottom" constant="6" id="Wh7-0L-HZN"/>
+                            <constraint firstItem="J8N-gk-nso" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wot-w3-wok"/>
+                            <constraint firstItem="J8N-gk-nso" firstAttribute="top" secondItem="2UV-d0-dci" secondAttribute="bottom" constant="2" id="XOF-IM-7k9"/>
+                            <constraint firstItem="qAi-cP-3sM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YSg-a8-Ffg"/>
+                            <constraint firstItem="qAi-cP-3sM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Zr8-PR-ByC"/>
+                            <constraint firstItem="J8N-gk-nso" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hk2-Ll-6a6"/>
+                            <constraint firstItem="2UV-d0-dci" firstAttribute="leading" secondItem="ePY-Mp-SHC" secondAttribute="trailing" id="mRQ-sl-Wbj"/>
+                            <constraint firstItem="ePY-Mp-SHC" firstAttribute="top" secondItem="qAi-cP-3sM" secondAttribute="bottom" constant="5" id="ue8-EN-ksE"/>
+                            <constraint firstItem="J8N-gk-nso" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wex-EP-qCy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Twitter Trendz" id="Y7i-9V-cm3"/>
+                    <connections>
+                        <outlet property="popularityFilter" destination="2UV-d0-dci" id="g1S-Eo-8jy"/>
+                        <outlet property="sortbyLabel" destination="ePY-Mp-SHC" id="fxE-4C-rrU"/>
+                        <outlet property="tweetSearchBar" destination="qAi-cP-3sM" id="thF-qo-I8B"/>
+                        <outlet property="tweetsTableView" destination="J8N-gk-nso" id="41k-dq-OkW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="131.78410794602701"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bGu-1c-8Pw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nqv-Nt-Ozg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WUa-nk-7i8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AZh-La-0Yc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZl-xc-gPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="790.25487256371821"/>
+        </scene>
+    </scenes>
+</document>
